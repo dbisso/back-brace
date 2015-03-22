@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?
+include_once 'vendor/autoload.php';
+
+set_include_path(get_include_path() . PATH_SEPARATOR . realpath(__DIR__ . '/../'));
+
+$app = new DBisso\BackBrace\App();
+$app->backup();
