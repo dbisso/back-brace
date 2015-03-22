@@ -1,0 +1,7 @@
+s3:
+    key: [AWS key]
+    secret: [AWS secret]
+    region: [AWS region]
+    bucket: [S3 bucket]
+    prefix: [prefix/for/file/backups]
+    prefixDB: [prefix/for/database/dumps]

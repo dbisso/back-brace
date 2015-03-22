@@ -1,0 +1,2 @@
+local:
+    path: [absolute/path/to/your/local/directory/to/sync]
