@@ -1,3 +1,4 @@
 /config/*.yml
 !/config/*.yml.dist
 /vendor
+.php_cs.cache
