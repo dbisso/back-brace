@@ -1,5 +1,13 @@
 #!/usr/bin/env php
 <?php
+/**
+ * BackBrace
+ *
+ * (c) 2015 Dan Bissonnet <dan@danisadesigner.com>
+ *
+ * @package dbisso/backbrace
+ */
+
 // Find us an us an autoloader.
 // Based on https://github.com/sebastianbergmann/phpunit/blob/master/phpunit
 foreach (array(__DIR__ . '/../../../autoload.php', __DIR__ . '/../../vendor/autoload.php', __DIR__ . '/../vendor/autoload.php') as $file) {
