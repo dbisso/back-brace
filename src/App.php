@@ -200,6 +200,10 @@ class App
                 continue;
             }
 
+            if ('dir' === $file['type']) {
+                continue;
+            }
+
             if (false !== ($update = $this->isUpdate($file))) {
                 $verb = $update === self::IS_NEW_FILE ? 'Uploading new file:' : 'Updating';
                 $this->log("$verb {$file['path']}");
