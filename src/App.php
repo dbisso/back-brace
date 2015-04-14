@@ -196,7 +196,7 @@ class App
      */
     private function update()
     {
-        $files = $this->filesystem->listContents('local://');
+        $files = $this->filesystem->listContents('local://', true);
 
         if ($this->fileCountLimit) {
             $files = array_slice($files, 0, $this->fileCountLimit);
@@ -235,7 +235,7 @@ class App
         $this->log("\nRemoving old files");
         $this->log('-------------------------------------------');
 
-        foreach ($this->filesystem->listContents('remote://') as $key => $file) {
+        foreach ($this->filesystem->listContents('remote://', true) as $key => $file) {
             if (! $this->localHas($file)) {
                 $this->log("Deleting file from remote: {$file['path']}");
                 $this->maybeDelete('remote://'.$file['path']);
@@ -312,7 +312,7 @@ class App
      */
     private function getRemoteFilesByPath()
     {
-        foreach ($this->filesystem->listContents('remote://') as $key => $_file) {
+        foreach ($this->filesystem->listContents('remote://', true) as $key => $_file) {
             $this->remoteFilesByPath[$_file['path']] = $_file;
         }
 
