@@ -174,6 +174,14 @@ class App
             'db',
         ];
 
+        if (function_exists( 'getenv' )) {
+            $home = getenv( 'HOME' );
+            var_dump($home);
+            if (!empty($home) && file_exists($home.DIRECTORY_SEPARATOR.'.backbrace')) {
+                $this->configPath = $home.DIRECTORY_SEPARATOR.'.backbrace';
+            }
+        }
+
         foreach ($configs as $configName) {
             if (false !== ($config = @file_get_contents($this->configPath."/$configName.yml", true))) {
                 $this->config[$configName] = Yaml::parse($config);
