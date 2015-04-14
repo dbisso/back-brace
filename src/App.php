@@ -360,6 +360,10 @@ class App
             '.DS_Store',
         ];
 
+        if (isset($this->config['local']['local']['exclude'])) {
+            $excludes = array_unique( array_merge($excludes, $this->config['local']['local']['exclude']) );
+        }
+
         foreach ($excludes as $exclude) {
             if (strpos($file['path'], $exclude) !== false) {
                 if (! isset($this->counts['excluded'])) {
