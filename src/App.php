@@ -174,8 +174,8 @@ class App
             'db',
         ];
 
-        if (function_exists( 'getenv' )) {
-            $home = getenv( 'HOME' );
+        if (function_exists('getenv')) {
+            $home = getenv('HOME');
             if (!empty($home) && file_exists($home.DIRECTORY_SEPARATOR.'.backbrace')) {
                 $this->configPath = $home.DIRECTORY_SEPARATOR.'.backbrace';
             }
