@@ -203,6 +203,11 @@ class App
             if (false !== ($update = $this->isUpdate($file))) {
                 $verb = $update === self::IS_NEW_FILE ? 'Uploading new file:' : 'Updating';
                 $this->log("$verb {$file['path']}");
+
+                if ($update === self::IS_UPDATE) {
+                    $this->maybeDelete('remote://' . $file[path]);
+                }
+
                 $this->maybeCopy('local://'.$file['path'], 'remote://'.$file['path']);
             } else {
                 $this->log("File exists and is up to date: {$file['path']}");
