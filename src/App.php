@@ -175,7 +175,8 @@ class App
         ];
 
         if (function_exists('getenv')) {
-            $home = getenv('HOME');
+            $home = realpath(filter_var(getenv('HOME'), FILTER_SANITIZE_STRING));
+
             if (!empty($home) && file_exists($home.DIRECTORY_SEPARATOR.'.backbrace')) {
                 $this->configPath = $home.DIRECTORY_SEPARATOR.'.backbrace';
             }
